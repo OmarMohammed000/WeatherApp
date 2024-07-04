@@ -1,0 +1,8 @@
+.body{
+    background: linear-gradient(#27345c,#091845);
+    height: 100vh;
+}
+.bg{
+    background:linear-gradient(rgba(0, 0, 0,0),rgba(0, 0, 0, 0.8)) ,url(/images/Rainy_night_in_Beijing.jpg) no-repeat center /cover;
+    height: 50vh;
+}
