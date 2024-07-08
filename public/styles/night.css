@@ -2,7 +2,19 @@
     background: linear-gradient(#27345c,#091845);
     height: 100vh;
 }
-.bg{
-    background:linear-gradient(rgba(0, 0, 0,0),rgba(0, 0, 0, 0.8)) ,url(/images/Rainy_night_in_Beijing.jpg) no-repeat center /cover;
-    height: 50vh;
+.clear{
+    background:linear-gradient(rgba(0, 0, 0,0),rgba(0, 0, 0, 0.8)) ,url(/images/night-stars-sky-dark.jpg) no-repeat center /cover;
+    height: 25vh;
+}
+.rainy{
+    background:linear-gradient(rgba(0, 0, 0,0),rgba(0, 0, 0, 0.6)) ,url(/images/rainySky.jpg) no-repeat center /cover;
+    height: 25vh;
+}
+.fog{
+    background:linear-gradient(rgba(0, 0, 0,0),rgba(0, 0, 0, 0.8)) ,url(/images/foggy.jpg) no-repeat center /cover;
+    height: 25vh;
+}
+.cloudy{
+    background:linear-gradient(rgba(0, 0, 0,0),rgba(0, 0, 0, 0.8)) ,url(/images/cloudyNight.jpg) no-repeat center /cover;
+    height: 25vh;
 }

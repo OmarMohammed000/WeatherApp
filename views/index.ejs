@@ -1,26 +1,61 @@
 <%- include('header.ejs') %>
-<div class="pb-5 pt-2"></div>
+
+<div class="pb-5 pt-5"></div>
+<% if(errors.length== 0) {%>
+  
 <div class="container mt-5">
-    <div class="row bg rounded-2 text-light">
-        <div class="col-12">
-        <h2 class=" text-light text-center mt-5 "> 
-            The Weather in your City  is 
-            <!-- The backend -->
-        </h2>
-        <div class="mt-1">
-            <h4 class="text-center">
-                zozo?
-                <!-- max/min -->
-            </h4>
+  <div  <% if (condition === "Clear") { %>
+      class="clear row rounded-2 text-white"  <% } else if (condition === "clouds") { %>
+      class="cloudy row rounded-2 text-white"
+    <% } else if (condition === "rain" || condition === "thunderstorm" || condition === "drizzle") { %>
+      class="rainy row rounded-2 text-white"
+    <% } else if (condition === "fog" || condition === "dust" || condition === "haze" || condition === "sand" || condition === "mist") { %>
+      class="fog row rounded-2 text-white"
+    <% }else{ %>class="row rounded-2 text-white" <% }%>  >  <div class="col-6 text-center">
+      <span>
+        <img src="https://openweathermap.org/img/wn/<%= iconId %>@4x.png" alt="<%= descriptioncondition %>" class="img-fluid">  </span>
+    </div>
+    <div class="mt-5 col-6">
+      <h4 class=" text-light text-center ">  <%= city %>
+      </h4>
+      <h2 class="text-center">
+        <span
+          class="<% if (currTemp >= 35) { %> text-danger fw-bold<% } else if (currTemp >= 30) { %> text-warning fw-bold <% } else if(currTemp<=19 && currTemp>10){ %> text-info-emphasis fw-bold<% } else if (currTemp <= 10) {"text-info fw-bold"%><% }%> " >  <%= currTemp %>&deg;C
+        </span>
+      </h2>  <h4 class="text-center">
+        <%= descriptioncondition%>  </h4>
+        <div class="col-12 text-center">
+            <h4>  UV index : 5</h4>
+    
+            </div>
+      <div class="row justify-content-end text-center me-2">
+
+        <div class="col-6">
+          <h4 class="text-center">
+            feeling <%= feelsLike %>
+          </h4>
         </div>
+        <div class="col-6">
+          <h4 class="text-center">
+            humidity is <%= humidity %>
+          </h4>
         </div>
-        <div class="">
-            <h3> The UV index is :</h3>
-            <!-- the uv index -->
-             <!-- the need for sun screen -->
-        </div>
-        
+
+      </div>
+     
 
     </div>
+    
+  </div>
 </div>
-<%- include('footer.ejs')  %>
+<% }else{ %>
+    <ul>
+        <% for (let index = 0; index < errors.length; index++) {%>
+         <li><%= errors[index] %> </li>
+        <%}%>
+      </ul>
+
+<% } %>    
+
+
+<%- include('footer.ejs') %>
