@@ -5,13 +5,13 @@
   
 <div class="container mt-5">
   <div  <% if (condition === "Clear") { %>
-      class="clear row rounded-2 text-white"  <% } else if (condition === "clouds") { %>
-      class="cloudy row rounded-2 text-white"
+      class="clear row rounded-2 text-white h"  <% } else if (condition === "clouds") { %>
+      class="cloudy row rounded-2 text-white h"
     <% } else if (condition === "rain" || condition === "thunderstorm" || condition === "drizzle") { %>
-      class="rainy row rounded-2 text-white"
+      class="rainy row rounded-2 text-white h"
     <% } else if (condition === "fog" || condition === "dust" || condition === "haze" || condition === "sand" || condition === "mist") { %>
-      class="fog row rounded-2 text-white"
-    <% }else{ %>class="row rounded-2 text-white" <% }%>  >  <div class="col-6 text-center">
+      class="fog row rounded-2 text-white h"
+    <% }else{ %>class="row rounded-2 text-white h" <% }%>  >  <div class="col-6 text-center">
       <span>
         <img src="https://openweathermap.org/img/wn/<%= iconId %>@4x.png" alt="<%= descriptioncondition %>" class="img-fluid">  </span>
     </div>

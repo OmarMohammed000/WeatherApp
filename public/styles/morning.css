@@ -18,3 +18,18 @@
     background:linear-gradient(rgba(0, 0, 0,0),rgba(0, 0, 0, 0.5)) ,url(/images/foggy.jpg) no-repeat center /cover;
     height: 50vh;
 }
+@media (max-width:1300px ) and  (min-width:820px) {
+    .h{
+        height: 50vh;
+    }
+}
+@media (max-width:1920px ) and  (min-width:1301px) {
+    .h{
+        height: 35vh;
+    }
+}
+@media (max-width:600px ) and  (min-width:200px) {
+    .h{
+        height: 30vh;
+    }
+}
