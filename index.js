@@ -1,18 +1,20 @@
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
+import env from "dotenv";
 
 const app = express();
 const port= 3000;
+env.config()
 app.use(express.static("public"));
 app.get("/",async(req,res)=>{
-    const currentTime = new Date().getHours(); 
+    const currentTime = new Date().getHours();
     const ipApi="http://ip-api.com/json/";
     const weatherApi="https://api.openweathermap.org/data/2.5/weather?";
     const uvApi="https://api.openuv.io/api/v1/uv?";
     const errors=[];
-    const apiWeatherid= "f8b7eca18271bf2e995864d550c5d90c"
-    const uvIndexId= "openuv-vay3rly71yq82-io";
+    const apiWeatherid=process.env.apiWeatherid;
+    const uvIndexId= process.env.uvIndexId;
     try {
         const response = await axios.get(ipApi);
         const lat = response.data.lat;
@@ -40,9 +42,6 @@ app.get("/",async(req,res)=>{
                     }
                 })
                 const uv= uvResponse.data.result.uv;
-                console.log(uv)
-                console.log(condition);
-                console.log(errors.length);
                 res.render("index.ejs",{time:currentTime,
                     currTemp:JSON.stringify(currTemp),
                     feelsLike:JSON.stringify(feelsLike),
